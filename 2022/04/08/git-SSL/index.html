@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Git 配置 SSL的教程 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="转载自 https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44187730&#x2F;article&#x2F;details&#x2F;104039507  生成秘钥1.1 配置全局用户信息123#配置用户git config --global user.name &quot;xxx&quot;git config --global user.email &quot;xxx@xxx.com&quot;  1.2生成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 配置 SSL的教程">
+<meta property="og:url" content="http://example.com/2022/04/08/git-SSL/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="转载自 https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44187730&#x2F;article&#x2F;details&#x2F;104039507  生成秘钥1.1 配置全局用户信息123#配置用户git config --global user.name &quot;xxx&quot;git config --global user.email &quot;xxx@xxx.com&quot;  1.2生成">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-08T01:56:00.000Z">
+<meta property="article:modified_time" content="2022-04-08T02:10:48.568Z">
+<meta property="article:author" content="黎晨光">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-git-SSL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/08/git-SSL/" class="article-date">
+  <time class="dt-published" datetime="2022-04-08T01:56:00.000Z" itemprop="datePublished">2022-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Git 配置 SSL的教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>转载自 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44187730/article/details/104039507">https://blog.csdn.net/weixin_44187730/article/details/104039507</a></p>
+</blockquote>
+<h1 id="生成秘钥"><a href="#生成秘钥" class="headerlink" title="生成秘钥"></a>生成秘钥</h1><h2 id="1-1-配置全局用户信息"><a href="#1-1-配置全局用户信息" class="headerlink" title="1.1 配置全局用户信息"></a>1.1 配置全局用户信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置用户</span></span><br><span class="line">git config --global user.name &quot;xxx&quot;</span><br><span class="line">git config --global user.email &quot;xxx@xxx.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2生成秘钥信息"><a href="#1-2生成秘钥信息" class="headerlink" title="1.2生成秘钥信息"></a>1.2生成秘钥信息</h2><h3 id="1-2-1-生成RSA算法秘钥"><a href="#1-2-1-生成RSA算法秘钥" class="headerlink" title="1.2.1 生成RSA算法秘钥"></a>1.2.1 生成RSA算法秘钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">生成秘钥</span></span><br><span class="line">ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-2-生成Ed25519算法秘钥"><a href="#1-2-2-生成Ed25519算法秘钥" class="headerlink" title="1.2.2 生成Ed25519算法秘钥"></a>1.2.2 生成Ed25519算法秘钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">生成秘钥</span></span><br><span class="line">ssh-keygen -t ed25519 -C &quot;xxx@xxx.com&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="提取公钥"><a href="#提取公钥" class="headerlink" title="提取公钥"></a>提取公钥</h1><h2 id="2-1-获取RSA算法公钥"><a href="#2-1-获取RSA算法公钥" class="headerlink" title="2.1 获取RSA算法公钥"></a>2.1 获取RSA算法公钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取公钥</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2rn3gFyV24djbyzfTJy194Zm2G77M4uLeiUq3aK0E9ZX16m5xjKjRSKuQ/ToPvoZxGrt3Rlp3ZXCT6FhiFYR6871w/bfWN4zwqwZZWIZcZuI+yIIzc8PeNC/gfmdsrQQCVzZJZk8NaFjiRMiqxpkvKLGalHCJR11BkyWW5dhRpcKbrPWyjWd8zE5aRkWMxYhwAw7Vk7pdx8LtMqsBZdmFJx6ypmPZZx8lmI+ti6fhdFOa5AVC0Jj3o0hcoNAIsofE2fraVSZhTFfK2ynv5iwQtSmLyFDgsXHDU5TM06Rz45ujy1L8nqe6nr5qenX1vCac5oPBmN63RSFeYXOkxGpy+LU/KwtfpEv5nOJOG4SMtaUVRgTWdmgM5bZEvpjEtAJJBuBEhHAiyFwC/c5RMll7rnFySTZoGZUhZQSSzBQgLuEIWzQE/v2QTCzwA5tfk3mpJ3mFdjZNNe40fwo69av0swnjJzDkhAXckeAc=xxx@xxx.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-获取ed25519算法公钥"><a href="#2-2-获取ed25519算法公钥" class="headerlink" title="2.2 获取ed25519算法公钥"></a>2.2 获取ed25519算法公钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取公钥</span></span><br><span class="line">cat ~/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置远程仓库SSH（本文以github为例）上的公钥"><a href="#配置远程仓库SSH（本文以github为例）上的公钥" class="headerlink" title="配置远程仓库SSH（本文以github为例）上的公钥"></a>配置远程仓库SSH（本文以github为例）上的公钥</h1><h3 id="3-1-登陆github帐户。"><a href="#3-1-登陆github帐户。" class="headerlink" title="3.1 登陆github帐户。"></a>3.1 登陆github帐户。</h3><p>点击你的头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key，然后你复制上面的公钥内容，粘贴进“Key”文本域内。 title可自定义。</p>
+<h3 id="3-2-点击-Add-key。"><a href="#3-2-点击-Add-key。" class="headerlink" title="3.2 点击 Add key。"></a>3.2 点击 Add key。</h3><h3 id="3-3-测试连接"><a href="#3-3-测试连接" class="headerlink" title="3.3 测试连接"></a>3.3 测试连接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">测试访问</span></span><br><span class="line">ssh -T git@github.com</span><br><span class="line">ssh -vT git@github.com</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">返回如下提示则配置成功</span></span><br><span class="line">Hi xxxx! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/08/git-SSL/" data-id="cl1ptdpnp000094w3bkmwb41m" data-title="Git 配置 SSL的教程" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo 搭建个人博客详细教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/08/git-SSL/">Git 配置 SSL的教程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/06/hello-world/">Hexo 搭建个人博客详细教程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 黎晨光<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
